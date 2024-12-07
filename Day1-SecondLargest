@@ -1,3 +1,4 @@
+//QUESTION:
 // Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1.
 
 // Note: The second largest element should not be equal to the largest element.
@@ -17,4 +18,10 @@
 // 2 ≤ arr.size() ≤ 105
 // 1 ≤ arr[i] ≤ 105
 
+//This question has :
+                  //1.Brute force solution
+                  //2.Better solution
+                  //3.Optimal solution
+
+//1.Brute force solution:
 

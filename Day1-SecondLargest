@@ -58,6 +58,34 @@
 //3.Optimal solution:
 //using single iteration and updating value of largest and second largest.
 //assume largest=arr[0] and secondLargest=-1 (assuming array contains positive numbers, if array contains negative numbers use INT_MIN)
+//T.C: O(n)
+//S.C:O(1)
 
-
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    
+    int secondLargest(vector<int>&arr){
+        int largest=arr[0];
+        int sLargest=-1;
+        for(int i=1;i<arr.size();i++){
+          if(arr[i]>largest){
+              sLargest=largest;
+              largest=arr[i];
+          }
+          
+          else if(arr[i]<largest&& arr[i]>sLargest){
+              sLargest = arr[i];
+          }
+        } 
+        return sLargest;
+    }
+    int getSecondLargest(vector<int> &arr) {
+        // Code Here
+        int sLargest = secondLargest(arr);
+    
+        return(sLargest);
+        }
+};
 

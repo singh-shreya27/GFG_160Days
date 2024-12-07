@@ -17,11 +17,47 @@
 // Constraints:
 // 2 ≤ arr.size() ≤ 105
 // 1 ≤ arr[i] ≤ 105
+                                                           
 
+                                                                        //Solution.
 //This question has :
-                  //1.Brute force solution
-                  //2.Better solution
+                  //1.Brute force approach
+                  //2.Better approach
                   //3.Optimal solution
 
-//1.Brute force solution:
+//1.Brute force approach:
+//In this solution we will first sort the array(O(nlogn)) , then after sorting we surely know that largest element will be =arr[n-1],
+     //but for second largest we again have to run a for loop(O(n)).
+//   for(i=n-2;i>=0;i--){
+//  if (arr[i] !=largest)
+//    secondLargest=arr[i];
+//  break;
+//       }
+
+//T.C: (nlogn+n)   
+//S.C: O(1)
+
+//2.Better approach:
+//In this method we will use first pass and second pass.
+//First pass: we will get the largest element. O(n)
+//    largest=arr[0]
+//    for(i=0;i<n;i++)
+//        { if (arr[i]>largest) 
+//     largest=arr[i];
+//                 }
+//Second pass: we will check secondlargest>-1 and not equal to largest , and get the second largest element. O(n)
+//    secondLargest=-1;
+//    for(i=0;i<=n;i++){
+//       if(arr[i]>secondLargest && arr[i] 1=largest)
+//        secondLargest=arr[i]
+//     }
+//     print secondLargest
+//T.C:O(n+n)=O(2n)
+//S.C:O(1)
+
+//3.Optimal solution:
+//using single iteration and updating value of largest and second largest.
+//assume largest=arr[0] and secondLargest=-1 (assuming array contains positive numbers, if array contains negative numbers use INT_MIN)
+
+
 

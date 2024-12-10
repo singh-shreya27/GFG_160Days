@@ -3,4 +3,5 @@
 1.Arrays
 <h1>Arrays:</h1>
   1.Second largest element from an array.<br>
-  2.Move zeroes to end.
+  2.Move zeroes to end.<br>
+  3.Reverse an array.<br>

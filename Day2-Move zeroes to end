@@ -17,3 +17,29 @@ Constraints:
 0 ≤ arr[i] ≤ 105
 
                                        //Solution
+//Brute force solution.
+//IDEA: Pick up all the non-zero elements and store it somewhere (temp. array). Then take everything from the temp array and place it in the array...the last step
+//will be to fill up the 0s at the back.
+//T.C: O(N)+O(x)+O(N-x)=O(2N)
+//S.C:O(x) which at max in worst case can be O(N).
+
+//code:
+vector<int> moveZeroes(int,vector<int> a){
+//step-1
+vector<int> temp;
+for(int i=0;i<n;i++){
+if(a[i] != 0){
+  temp.push_back(a[i]);
+  }
+}
+//step-2
+int nz=temp.size();
+for(int i=0;i<nz;i++){
+a[i]=temp[i];
+}
+//step-3
+for(int i=nz;i<n;i++){
+a[i]=0;
+}
+return a;
+}

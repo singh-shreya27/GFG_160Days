@@ -43,3 +43,34 @@ a[i]=0;
 }
 return a;
 }
+
+//There is no better solution.
+
+//Optimal solution:
+     class Solution {
+  public:
+    vector<int> pushZerosToEnd(vector<int>& arr) {
+        // code here
+        //step-1.finding first zeroth element.
+       int j=-1;
+       for(int i=0;i<arr.size();i++){
+           if(arr[i]==0){
+               j=i;
+               break;
+           }
+       }
+
+  //no non zero elements
+       if(j==-1) {
+       return arr;
+       }
+       
+       for(int i=j+1;i<arr.size();i++){
+           if(arr[i]!=0){
+               swap(arr[i],arr[j]);
+               j++;
+           }
+       }
+       return arr;
+    }
+};

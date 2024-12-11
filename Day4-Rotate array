@@ -18,3 +18,61 @@ Constraints:
 0 <= arr[i] <= 105
 
                                         //solution
+//left rotate the array by one place:
+vector<int> rotateArray(vector<int> &arr,int n)
+int temp=arr[0];
+for(int i=1;i<n;i++){
+    arr[i-1]=arr[i];
+}
+arr[n-1]=temp;
+return arr;
+}
+//T.C:O(N)
+//S.C:O(1)
+
+//left rotate the array by d places.
+    //Brute force approach.
+//firstly, we will make a temp array and store the first d elements.
+//then we will do shifting from dth index..and lastly, we will put back the elements at last.
+      //code
+void leftRotate(int arr[],int n, int d){
+d=d%n;
+//stored in temp
+int temp[d];
+for(int i=0;i<d;i++){             //O(d)
+temp[i]=arr[i];
+}
+//shifted
+for(int i=d;i<n;i++){                     //O(n-d)
+arr[i-d]=arr[i];
+}
+//placed back temp into array.
+for(int i=n-d;i<n;i++){
+arr[i]=temp[i-(n-d)];               //O(d)
+    }
+}
+int main(){
+int n;
+cin>>n;
+int arr[n];
+for(int i=0;i<n;i++){
+cin>>arr[i];
+}
+int d;
+cin>>d;
+leftRotate(arr,n,d);
+for(int i=0;i<n;i++){
+cout<<arr[i]<<" ";
+}
+return 0;
+}
+
+//T.C:O(n+d)
+//S.C:O(d)
+
+
+//better solution might not exist.
+//but we have to get rid of the extra space.
+//optimal solution
+
+    

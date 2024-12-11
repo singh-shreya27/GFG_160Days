@@ -6,4 +6,4 @@
   2.Move zeroes to end.<br>
   3.Reverse an array.<br>
   4.Rotate an array.<br>
-  
+  5.Next Permutation.<br>
